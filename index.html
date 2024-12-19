@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/undangan.css">
+    <title>Undangan Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .cover {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #f1f1f1;
+            margin-top: 50px; 
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;  
+            z-index: 10; 
+        }
+
+        .pos-tl,.pos-tr,.pos-br,.pos-bl {
+            position: absolute;
+            z-index: 1; 
+            width: 80px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .ornament-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .ornament-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+       
+        .quotes, .event, .profile, .gallery, .special-guests, .rsvp, .story, .gifts, .message, .thank-you {
+            z-index: 5;
+            position: relative;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="javascript:void(0);" onclick="scrollToSection('quotes')">Quotes</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('profile')">Profile</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('event')">Event</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('gallery')">Gallery</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('special-guests')">Special Guests</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('rsvp')">RSVP</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('story')">Story</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('gifts')">Gifts</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('messg')">Message</a>
+        <a href="javascript:void(0);" onclick="scrollToSection('Thank')">Thank You</a>
+    </div>
+          
+    <div id="section-1">
+        <img class="post-tl ornament" src="assets/ornament/ornament1.png">
+        <img class="post-tr ornament" src="assets/ornament/ornament1.png">
+        <img class="post-br ornament" src="assets/ornament/ornament1.png">
+        <img class="post-bl ornament" src="assets/ornament/ornament1.png">
+        <div class="cover" id="cover">
+            <h1>The Wedding Of</h1>
+            <p>Ferdinand & Aganta </p>
+            <p>Untuk: Hanina</p>
+            <button type="button" onclick="scrollToSection('quotes')">Buka Undangan</button>
+        </div>
+    </div>
+
+    <div id="quotes" class="quotes">
+        <!-- Container untuk elemen quotes -->
+        <div class="quotes-container">
+            <h2>Quotes</h2>
+            <p>>يَٰٓأَيُّهَا ٱلنَّاسُ ٱتَّقُوا۟ رَبَّكُمُ ٱلَّذِى خَلَقَكُم مِّن نَّفْسٍ وَٰحِدَةٍ وَخَلَقَ مِنْهَا زَوْجَهَا وَبَثَّ مِنْهُمَا رِجَالًا كَثِيرًا وَنِسَآءً ۚ وَٱتَّقُوا۟ ٱللَّهَ ٱلَّذِى تَسَآءَلُونَ بِهِۦ وَٱلْأَرْحَامَ ۚ إِنَّ ٱللَّهَ كَانَ عَلَيْكُمْ رَقِيبً</p>
+            <p>Ya ayyuhan-nasuttaqụ rabbakumullazi khalaqakum min nafsiw waḥidatiw wa khalaqa min-ha zaujaha wa bassa min-huma rijalang kasiraw wa nisa'a, wattaqullahallazi tasa`alụna bihi wal-ar-ḥam, innallaha kana 'alaikum raqiba.
+                
+                Artinya: "Hai sekalian manusia, bertakwalah kepada Tuhan-mu yang telah menciptakan kamu dari seorang diri, dan dari padanya Allah menciptakan istrinya; dan dari pada keduanya Allah mengembangbiakkan laki-laki dan perempuan yang banyak. Dan bertakwalah kepada Allah yang dengan (mempergunakan) nama-Nya kamu saling meminta satu sama lain, dan (peliharalah) hubungan silaturahmi. Sesungguhnya Allah selalu menjaga dan mengawasi kamu."</p>
+    
+            <audio controls>
+                <source src="assets/audio/musik batak.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div> 
+        
+    <div id="kotak-musik">
+        <audio id="lagu" loop>
+            <source src="assets/audio/musik batak.mp3">
+            Audio tidak dapat diputar
+        </audio>
+        <div id="tombol-musik" onclick="putarLagu()" >
+            <img id="kontrol"  src="assets/img/volume-off-indicator.png" >
+        </div>
+    </div>
+    
+    
+
+    <!-- Profil Pengantin -->
+    <div class="profile">
+        <img src="assets/img/yakup.jpg" alt="Foto Pengantin">
+        <h2>Ferdinand</h2>
+        <p>Putra dari Bapak Vianto & Ibu Benita</p>
+        <a href="https://www.instagram.com/yooseunny" target="_blank">Instagram</a>
+    </div>
+
+    <div class="profile">
+        <img src="assets/img/pengantincwek.png" alt="Foto Pengantin">
+        <h2>Aganta</h2>
+        <p>Putri dari Bapak Hutabailan & Ibu Lingga</p>
+        <a href="https://www.instagram.com/yooseunny" target="_blank">Instagram</a>
+    </div>
+
+   <!-- Tanggal Acara & Lokasi -->
+<div id="event" class="event">
+    <!-- Container untuk elemen event -->
+    <div class="event-container">
+        <h2>Tanggal dan Waktu</h2>
+        <p>Waktu Acara: 9:00 - 4:00 </p>
+        <p>Resepsi: Tanggal 9 - Gedung Dhanapala</p>
+        <a href="https://maps.app.goo.gl/P55WDGG7kmzR2GeT9" target="_blank">Lihat Lokasi di Google Maps</a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15866.743338856479!2d106.8385312!3d-6.172801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cb019d1a5b%3A0x7176ab25b6de0b31!2sGedung%20Dhanapala!5e0!3m2!1sid!2sid!4v1728128084372!5m2!1sid!2sid" width="340" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+    <!-- Gallery -->
+    <div id="gallery" class="gallery">
+        <h2>Galeri</h2>
+        <img src="assets/img/undangan.png" alt="Momen Berharga">
+        <img src="assets/img/prewed1.jpg" alt="Momen Berharga">
+        <img src="assets/img/prewed2.jpg" alt="Momen Berharga">
+        <video controls>
+            <source src="assets/video/preweddingvideo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="special-guests" class="special-guests">
+        <!-- Container untuk elemen special-guests -->
+        <div class="guests-container">
+            <h2>Turut Mengundang</h2>
+            <table>
+                <tr>
+                    <th>Nama</th>
+                    <th>Hubungan</th>
+                </tr>
+                <tr>
+                    <td>Nauli</td>
+                    <td rowspan="2">Keluarga</td>
+                </tr>
+                <tr>
+                    <td>Sohara</td>
+                </tr>
+                <tr>
+                    <td>Sinaga</td>
+                    <td>Teman</td>
+                </tr>
+                <tr>
+                    <td>Maruli</td>
+                    <td rowspan="2">Keluarga</td>
+                </tr>
+                <tr>
+                    <td>Gita</td>
+                </tr>
+                <tr>
+                    <td>Rudi</td>
+                    <td>Rekan Kerja</td>
+                </tr>
+                <tr>
+                    <td>Putri</td>
+                    <td>Teman</td>
+                </tr>
+                <tr>
+                    <td>Andi</td>
+                    <td>keluarga</td>
+                </tr>
+                <tr>
+                    <td>Lisa</td>
+                    <td>Teman </td>
+                </tr>
+                <tr>
+                    <td>Fatima</td>
+                    <td>keluarga</td>
+                </tr>
+                <tr>
+                    <td>Hendra</td>
+                    <td>Teman</td>
+                </tr>
+                <tr>
+                    <td>Fadli</td>
+                    <td>keluarga</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div id="rsvp" class="rsvp">
+        <h2>Konfirmasi Kehadiran</h2>
+        
+        <!-- Container untuk elemen RSVP -->
+        <div class="rsvp-container">
+            <form>
+                <!-- Nama -->
+                <input type="text" placeholder="Nama" required>
+    
+                <!-- Email -->
+                <input type="email" placeholder="Email" required>
+    
+                <!-- No. Telepon -->
+                <input type="number" placeholder="No. Telepon" required>
+    
+                <!-- Kehadiran (Radio Button) -->
+                <p>Kehadiran:</p>
+                <label>
+                    <input type="radio" name="kehadiran" value="Hadir"> Hadir
+                </label>
+                <label>
+                    <input type="radio" name="kehadiran" value="Tidak Hadir"> Tidak Hadir
+                </label>
+    
+                <!-- Pilihan Tambahan (Checkbox) -->
+                <p>Menu Makanan:</p>
+                <label>
+                    <input type="checkbox" name="pilihan[]" value="Vegetarian"> Vegetarian
+                </label>
+                <label>
+                    <input type="checkbox" name="pilihan[]" value="Makanan Non-Alkohol"> Makanan Non-Alkohol
+                </label>
+    
+                <!-- Pilihan Jumlah Tamu (Selectbox) -->
+                <p>Jumlah Tamu:</p>
+                <select name="jumlah_tamu" required>
+                    <option value="" disabled selected>Pilih jumlah tamu</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+    
+                <!-- Pesan Tambahan (Textarea) -->
+                <p>Pesan Tambahan:</p>
+                <textarea name="pesan" placeholder="Tulis pesan Anda di sini..." rows="4"></textarea>
+    
+                <!-- Tombol Kirim -->
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Story -->
+<div id="story" class="story">
+    <h2>Kisah Cinta Kami</h2>
+    <div class="story-container">
+        <img src="assets/img/pacaran.png" alt="Kisah Cinta Aganta dan Ferdinant" class="story-image">
+        
+        <p>Aganta dan Ferdinant bertemu di seminar bisnis di Jakarta, di mana Ferdinant membantu Aganta yang kebingungan mencari tempat duduk. Mereka menjalin pertemanan yang semakin dekat, sering bertukar cerita dan menikmati waktu bersama. Setelah beberapa tahun, Ferdinant melamar Aganta di restoran kenangan mereka, dan Aganta menerima lamaran itu. Mereka merayakan pernikahan dikelilingi oleh keluarga dan teman-teman terdekat, memulai hidup baru bersama dalam cinta dan dukungan.</p>
+    </div>
+</div>
+
+
+    <!-- Kirim Hadiah -->
+    <div id="gifts" class="gifts">
+        <h2>Kirim Hadiah</h2><br>
+        <img src="assets/img/barcode.png" alt="Kado"><br>
+        <button onclick="copyText('No. Rekening: 1234567890')">Salin No. Rekening</button>
+    </div>
+
+<!-- Pesan untuk Pengantin -->
+<div id="message" class="message">
+    <h2>Pesan dan Doa</h2>
+    <form id="messageForm" onsubmit="handleSubmit(event)">
+        <input type="text" id="name" placeholder="Nama" required>
+        <textarea id="messageText" placeholder="Tulis pesan atau doa untuk pengantin..." required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+    <div id="result" class="result">result : 
+        <ul id="messages"></ul>
+    </div> 
+</div>
+
+
+
+    <!-- Ucapan Terima Kasih -->
+    <div id="thank-you" class="thank-you">
+        <h2>Terima Kasih</h2>
+        <p>Terima kasih atas kehadiran dan doanya!</p>
+    </div>
+
+    <script>
+        function scrollToSection(id) {  
+            document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Text copied: " + text);
+        }
+    </script>
+</body>
+</html>

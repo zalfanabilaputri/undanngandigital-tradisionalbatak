@@ -1,0 +1,648 @@
+          body {
+            font-family: 'Times New Roman', serif; 
+            background-color: hsl(0, 87%, 40%) 39%, 93%;
+            color: #b92c27;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around; 
+            background-color: #fffbfb;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar a {
+            padding: 14px 20px;
+            display: block;
+            color: black; 
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: rgb(252, 252, 252);
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row; 
+                justify-content: space-around; 
+            }
+        
+            .navbar a {
+                padding: 10px; 
+                width: auto; 
+            }
+        }
+        
+        body {
+            padding-top: 60px; 
+        }
+        
+        .cover {
+            background-image: url('../assets/img/background2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding-top: 70px;
+            margin: 0;
+            height: 100vh;
+            color: #ffffff;
+            border-bottom: 5px solid #fffefe;
+           
+        }
+ 
+        .cover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+           
+        }
+
+        .cover p {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            
+        }
+
+        .cover button {
+            padding: 15px 40px;
+            background-color: #811c32;
+            color: #fffefe;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 8px;  
+        }
+
+        .ornament {
+            position: absolute;
+            width: 80px;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .ornament-top-left{
+            top: 20px;
+            left: 20px;
+            animation-delay: 0.5s;
+        }
+        .ornament-bottom-right{
+            top: 20px;
+            left: 20px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float{
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+
+
+#kotak-musik {
+    display: none; 
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100; 
+}
+
+#tombol-musik {
+    cursor: pointer; 
+}
+
+#kontrol {
+    width: 40px; 
+    height: 40px;
+}
+
+@media (max-width: 480px) {
+    #tombol-musik img {
+        width: 25px; 
+        height: 25px;
+    }
+}
+
+ 
+  #kotak-musik {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px; 
+    display: flex; 
+    align-items: center; 
+}
+
+#tombol-musik {
+    cursor: pointer; 
+}
+
+#kontrol {
+    width: 30px;
+    height: auto; 
+}
+
+
+
+
+ 
+/* Container umum */
+.container {
+    max-width: 1200px; /* Batas lebar maksimum */
+    margin: 0 auto;    /* Memastikan konten selalu berada di tengah */
+    padding: 0 20px;   /* Memberikan sedikit ruang di sisi kiri dan kanan */
+    box-sizing: border-box;
+}
+
+.quotes, .profile, .event, .gallery, .special-guests, .rsvp, .story, .gifts, .message, .thank-you {
+    padding: 60px;
+    text-align: center;
+    border-bottom: 2px solid #f8f8f8;
+    background-image: url('../assets/img/background2.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .quotes, .profile, .event, .gallery, .special-guests, .rsvp, .story, .gifts, .message, .thank-you {
+        padding: 80px;
+    }
+
+    .quotes p {
+        font-size: 2rem;
+    }
+
+    .event-container h2 {
+        font-size: 28px;
+    }
+
+    .event-container p {
+        font-size: 18px;
+    }
+
+    .event-container a {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+
+
+.profile img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 5px solid #ffe677;
+}
+
+.profile h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.profile a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Responsif untuk layar sedang (481px hingga 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .quotes p {
+        font-size: 1.6rem; 
+    }
+
+
+    .profile h2 {
+        font-size: 1.5rem; 
+    }
+
+    .profile p {
+        font-size: 1rem; 
+        margin-bottom: 6px;
+    }
+
+    .profile a {
+        font-size: 0.9rem; 
+    }
+}
+
+/* Styling umum untuk container event */
+.event-container {
+    max-width: 600px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: #f0f8ff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+/* Judul */
+.event-container h2 {
+    font-size: 24px; 
+    color: #333; 
+}
+
+/* Paragraf */
+.event-container p {
+    font-size: 16px; 
+    color: #555; 
+}
+
+/* Tautan */
+.event-container a {
+    display: inline-block; 
+    margin-top: 15px; 
+    padding: 10px 15px; 
+    background-color: #007BFF; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-size: 14px; 
+}
+
+/* Efek hover pada tautan */
+.event-container a:hover {
+    background-color: #0056b3; 
+}
+
+
+@media (max-width: 480px) {
+    .event-container {
+        max-width: 95%; 
+        padding: 10px; 
+        margin: 10px auto; 
+    }
+
+    .event-container h2 {
+        font-size: 20px; 
+    }
+
+    .event-container p {
+        font-size: 14px;
+    }
+
+    .event-container a {
+        padding: 10px 20px; 
+        font-size: 12px; 
+    }
+    .map-container {
+        position: relative;
+        padding-bottom: 40%; 
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #f0f0f0;
+    }
+    
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+        .gallery h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .gallery img, .gallery video {
+            width: 90%;
+            height: auto;
+            margin-bottom: 25px;
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+        }
+
+
+.guests-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling untuk heading */
+.guests-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk tabel */
+.guests-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.guests-container th, .guests-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.guests-container th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.guests-container td {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Styling untuk mempercantik tabel */
+.guests-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.guests-container tr:hover {
+    background-color: #f1f1f1;
+}
+
+        .rsvp h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .rsvp form input, .rsvp form select, .rsvp form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #921808;
+            border-radius: 8px;
+        }
+
+        .rsvp form button {
+            padding: 15px 40px;
+            background-color: #b57f33;
+            color: #f7f2f2;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+        .rsvp-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #eb8b8b;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+/* Container Styling */
+.story {
+    padding: 40px 20px; 
+    background-color: #f9f9f9; 
+    text-align: center;
+}
+
+.story-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.story-content {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.story-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.story p {
+    max-width: 600px; 
+    font-size: 1.2rem; 
+    line-height: 1.6; 
+    color: #333;
+    margin: 0 20px;
+}
+
+/* Responsif untuk tablet dan ponsel */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .story p {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .story-image {
+        max-width: 100%;
+    }
+}
+
+
+        h2 {
+            text-align: center;
+            color: #fff7f7;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        label {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling untuk form section headers */
+        p {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        .story {
+            background-color: #fff7e1;
+        }
+
+        .gifts h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .gifts img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 4px solid #880101; 
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .gifts button {
+            padding: 15px;
+            background-color: #d12a2a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+/* Styling umum untuk .message section */
+.message {
+    padding: 20px;
+    text-align: center; 
+}
+
+.message h2 {
+    font-size: 2rem; 
+    margin-bottom: 20px;
+}
+
+.message form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch; 
+}
+
+.message form input, 
+.message form textarea {
+    width: 100%; 
+    padding: 15px; 
+    margin: 10px 0; 
+    border: 1px solid #b57f33; 
+    border-radius: 8px;
+    font-size: 1rem; 
+}
+
+
+@media (max-width: 480px) {
+    .message h2 {
+        font-size: 1.6rem; 
+    }
+
+    .message form input,
+    .message form textarea {
+        padding: 10px; 
+        font-size: 0.9rem; 
+    }
+}
+
+
+
+      /* Styling umum untuk thank-you section */
+.thank-you {
+    background-color: #f4f0e6;
+    padding: 60px; 
+    text-align: center;
+}
+
+.thank-you h2 {
+    font-size: 2.2rem; 
+    margin-bottom: 20px;
+}
+
+.thank-you p {
+    font-size: 1.4rem;
+    color: #fcfbfa;
+}
+
+
+@media (max-width: 378px) and (max-height: 812px) {
+    .thank-you {
+        padding: 30px; 
+    }
+
+    .thank-you h2 {
+        font-size: 2rem;
+    }
+
+    .thank-you p {
+        font-size: 1.9rem;
+    }
+}
+
+    
